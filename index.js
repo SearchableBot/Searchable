@@ -15,7 +15,7 @@ client.on("ready", async () => {
     global.page = await browser.newPage();
     await page.goto(config.defaultpage);
     await page.setViewport({width: 1920, height: 1080});
-    console.log('ready as ' + client.user.username)
+    console.log(config.readymessage)
 });
 
 client.on('message', async (message) => {
