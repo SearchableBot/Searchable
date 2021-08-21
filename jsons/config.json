@@ -2,5 +2,6 @@
     "prefix": "pc!",
     "statuscode": "PLAYING",
     "statustext": "searchable",
-    "defaultpage": "https://google.com"
+    "defaultpage": "https://google.com",
+    "readymessage": "'I am now ready, logged in as ' + client.user.username"
 }
