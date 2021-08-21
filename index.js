@@ -1,7 +1,15 @@
-const puppeteer = require('puppeteer');
+//DISCORD CLIENT
 const Discord = require("discord.js");
 const client = new Discord.Client();
-//Client event ready
+
+//CONFIGURATION FILES
+const { token } = require("./jsons/auth.json");
+const config = require("./jsons/config.json");
+
+//GENERAL DEFINITIONS
+const puppeteer = require('puppeteer');
+
+//READY EVENT
 client.on("ready", async () => {
     const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox', '--enable-remote-extensions'], "headless": false});
     global.page = await browser.newPage();
@@ -26,5 +34,6 @@ client.on('message', async (message) => {
             console.log(err)
         }
 })
-//Bot login
-client.login("ODI3NjMwOTM5Nzc2NDgzMzY4.YGd1YA.S0Q_srw3uzwL69599BB-eF0eyUM")
+
+//BOT LOGIN
+client.login(token)
