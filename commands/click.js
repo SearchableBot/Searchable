@@ -9,5 +9,5 @@ message.channel.send(args[0]+" "+args[1]);
     return message.channel.send("X coordinate is bigger than the window size. Current window size: 1920x1080");
   if(y > 1080)
     return message.channel.send("Y coordinate is bigger than the window size. Current window size: 1920x1080");
-  await page.mouse.click(X, Y); //You can add left or right click too, but fuck this im out
+  await page.mouse.click(x, y); //You can add left or right click too, but fuck this im out
 }
