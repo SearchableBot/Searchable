@@ -29,7 +29,7 @@ client.on('message', async (message) => {
         console.log(`[${message.author.username}] [${message.author.id}] >> ${prefix}${command} ${commandargs}`);
         try {
             try{
-            delete require.cache[require.resolve(`../commands/${command}`)]
+            delete require.cache[require.resolve(`./commands/${command}`)]
             }catch(e){}            
             let commandFile = require(`./commands/${command}.js`);
             commandFile.run(client, message, args);
