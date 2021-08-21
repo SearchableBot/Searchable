@@ -1,17 +1,13 @@
 exports.run = async (client, message, args) => {
-    message.channel.send('Opening...')
-    var arguments = `${args[0]}`;
-        var result = arguments.includes("file://");
-       
-        if(result === true) { 
-            message.channel.send("This link is blacklisted!") 
-        } else {
-    try {   
+    let m = await message.channel.send('Opening...')
+    if(args[0].includes("file://"))
+        return message.channel.send("This link is blacklisted!") 
+    try {
+        if(/^(ftp|https?):\/\/+(www\.)?[a-z0-9\-\.]{3,}\.[a-z]{3}$/.test(learnRegExp.arguments[0]))
+            return m.edit(":x: | This url is not valid");
         await page.goto(args[0])
-        message.channel.send('Opened!')
-       
+        m.edit(':x: Opened [this url](args[0])')
     } catch (e) {
-        message.channel.send('Could not open!')
+        m.edit(':x: | Could not open the [url](args[0])!')
     }
-}
 }
