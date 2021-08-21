@@ -1,5 +1,6 @@
 {
     "prefix": "pc!",
     "statuscode": "PLAYING",
-    "statustext": "searchable"
+    "statustext": "searchable",
+    "defaultpage": "https://google.com"
 }
