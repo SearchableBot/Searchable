@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 
 //CONFIGURATION FILES
-const { token } = require("./jsons/auth.json");
+const auth = require("./jsons/auth.json");
 const config = require("./jsons/config.json");
 
 //GENERAL DEFINITIONS
@@ -36,4 +36,4 @@ client.on('message', async (message) => {
 })
 
 //BOT LOGIN
-client.login(token)
+client.login(auth.token)
