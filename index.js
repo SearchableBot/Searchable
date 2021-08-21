@@ -13,7 +13,7 @@ const puppeteer = require('puppeteer');
 client.on("ready", async () => {
     const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox', '--enable-remote-extensions'], "headless": false});
     global.page = await browser.newPage();
-    await page.goto('http://google.com');
+    await page.goto(config.defaultpage);
     await page.setViewport({width: 1920, height: 1080});
     console.log('ready as ' + client.user.username)
 });
