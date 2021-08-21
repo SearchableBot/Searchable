@@ -1,4 +1,5 @@
 exports.run = async (client, message, args) => {
+message.channel.send(args[0]+" "+args[1]);
   if(!args[0] || !args[1] || isNaN(args[0]) || isNaN(args[1]))
     return message.channel.send("Proper format: pc!click {X} {Y}");
   let x = Math.floor(args[0]), y = Math.floor(args[1]);
