@@ -3,6 +3,7 @@ exports.run = async (client, message, args) => {
     if(args[0].includes("file://"))
         return message.channel.send("This link is blacklisted!") 
     try {
+        args[0] = args[0].substr(0,4)=="http"?args[0]: `http://${args[0]}`
         if(/^(ftp|https?):\/\/+(www\.)?[a-z0-9\-\.]{3,}\.[a-z]{3}$/.test(learnRegExp.arguments[0]))
             return m.edit(":x: | This url is not valid");
         await page.goto(args[0])
